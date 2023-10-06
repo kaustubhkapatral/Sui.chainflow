@@ -1,0 +1,28 @@
+---
+import { Image } from "@astrojs/image/components";
+import heroImage from "assets/hero.png";
+import Link from "@components/ui/link.astro";
+---
+
+<main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-8">
+  <div class="py-6 md:order-1 hidden md:block">
+    <Image
+      src={heroImage}
+      alt="Astronaut in the air"
+      loading="eager"
+      format="avif"
+    />
+  </div>
+  <div>
+    <h1 class="text-5xl lg:text-6xl font-bold lg:tracking-tight">
+      Chainflow x Sui
+    </h1>
+    <p class="text-lg mt-4 text-slate-600 max-w-xl">
+      Chainflow runs a secure, high-performance Sui validator trusted by
+      thousands of stakers. We've supported the network since before the public
+      launch, and continue to invest in innovation across the ecosystem. Unlike
+      many validator operators, we're fully self-funded, completely independent,
+      and proudly values-driven.
+    </p>
+  </div>
+</main>

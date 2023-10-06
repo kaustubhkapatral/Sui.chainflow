@@ -1,0 +1,22 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import * as Solana from "@content/pages/solana-contributions.md";
+---
+
+<Layout title="Solana Contributions">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Solana Ecosystem Contributions</Fragment>
+      <Fragment slot="desc">
+        We support initatives across the Solana community to secure and
+        decentralize the network.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="mx-auto prose prose-lg mt-6 max-w-3xl prose-a:text-orange-500">
+      <Solana.Content />
+    </div>
+  </Container>
+</Layout>

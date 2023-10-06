@@ -1,0 +1,60 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Cta from "@components/cta.astro";
+import { Icon } from "astro-icon";
+
+const values = [
+  {
+    value: "Inclusivity",
+    desc: "We believe that everyone should have a seat at the table, no matter what their background is.",
+  },
+  {
+    value: "Equitability",
+    desc: "We believe that everyone should be able to participate in shared work and success, no matter how many resources they have.",
+  },
+  {
+    value: "Fairness",
+    desc: "We believe that everyone should play by the same rules, no matter how big or how small they are.",
+  },
+  {
+    value: "Decentralization",
+    desc: "We believe that no one should have outsized power over the network, no matter who they are.",
+  },
+];
+---
+
+<Layout title="Values">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Our Values</Fragment>
+      <Fragment slot="desc">
+        Chainflow is building crypto infrastructure for a brighter future. <br
+        /> Self-funded from day one, we operate proudly in service of our
+        values:
+      </Fragment>
+    </Sectionhead>
+
+    <p class="text-lg leading-relaxed text-slate-500"></p>
+
+    <div class="flex flex-col justify-center items-center gap-10 mt-10">
+      {
+        values.map((item) => (
+          <div class="flex flex-col gap-3 items-center max-w-md">
+            <div class="bg-orange-100 rounded-full p-2 w-8 h-8 shrink-0">
+              <Icon class="text-orange-500" name="bx:bxs-star" />
+            </div>
+            <h2 class="text-xl font-semibold text-center">{item.value}</h2>
+            <p class=" text-center text-gray-700">{item.desc}</p>
+          </div>
+        ))
+      }
+    </div>
+    <div class="mt-10 mx-auto text-center text-gray-300">——</div>
+    <p class="mt-10 mx-auto max-w-xl text-gray-700 text-center">
+      If our values resonate with yours, please consider supporting our work
+      across the Solana ecosystem by staking with us.
+    </p>
+  </Container>
+</Layout>

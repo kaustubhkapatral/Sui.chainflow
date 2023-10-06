@@ -1,0 +1,104 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import { Image } from "@astrojs/image/components";
+
+const TeamImg1 = "https://source.unsplash.com/IF9TK5Uy-KI";
+const TeamImg2 = "https://source.unsplash.com/iEEBWgY_6lA";
+const TeamImg3 = "https://source.unsplash.com/ZHvM3XIOHoE";
+
+const team = [
+  {
+    name: "Janette Lynch",
+    title: "Senior Director",
+    avatar: {
+      src: TeamImg1,
+      width: 480,
+      height: 560,
+    },
+  },
+  {
+    name: "Marcell Ziemann",
+    title: "Principal Strategist",
+    avatar: {
+      src: TeamImg2,
+      width: 580,
+      height: 580,
+    },
+  },
+  {
+    name: "Robert Palmer",
+    title: "Marketing Engineer",
+    avatar: {
+      src: TeamImg3,
+      width: 580,
+      height: 580,
+    },
+  },
+];
+---
+
+<Layout title="About">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Values</Fragment>
+      <Fragment slot="desc">Opening the door to freedom.</Fragment>
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800">
+        Crypto infrastructure for a brighter future.
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+      The following comes from The Psychology of Money, by Morgan Housel:
+
+        “Aligning money towards a life that lets you do what you want, when you want, with who you want, where you want, for as long as you want, has incredible return.”
+      <br></br>
+        “The highest form of wealth is the ability to wake up every morning and say, ‘I can do whatever I want today."
+      <br></br>
+       To us, the concept of freedom speaks through these two quotes.
+      <br></br>
+       Ewoki of Gitcoin adds another important perspective—to paraphrase: "Ethereum was not created to make you wealthy but to make you free."
+      <br></br>
+       We truly believe this, and carry this thought through to the general potential crypto holds to create a better world.
+      <br></br>
+       Adding everything together, the way we see it is that:
+      <br></br>
+       Freedom and happiness are very tightly linked.
+      <br></br>
+       In today's capital-fueled society, a certain amount of capital is required for humans to enjoy freedom.
+       Crypto or Web3, however you want to refer to it, is creating new opportunities for humanity to accumulate capital and, if done right, will cause this capital to be distributed more equitably than the current economy allows.
+      <br></br>
+       I feel grateful each day—even multiple times per day—that building Chainflow has allowed me to begin experiencing this freedom. I believe I'm a better version of me, for myself and those around me, as a result.
+      <br></br>
+       My primary motivation to continue growing Chainflow is to open the door for others to experience this freedom. That effort starts with the Chainflow organization: my intention is to manifest an organizational structure that allows those who work with Chainflow to experience this freedom.
+      <br></br>
+       We'll expand this further by building infrastructure that underpins an alternative to the current economy, and the power structure it enables. Our hope is that this alternative is more fair, equitable, and inclusive than the closed, inequitable, and exclusive power structure that has a stranglehold on the economy today.
+      <br></br>
+       We'll also do this by continuing to advocate for true decentralization in staking networks. Because, if all we're doing is rebuilding today's inequitable economy and power structure on new technology, well, then what's the point?
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+      {
+        team.map((item) => (
+          <div class="group">
+            <div class="w-full aspect-square">
+              <Image
+                {...item.avatar}
+                format="avif"
+                alt="Team"
+                class="w-full h-full object-cover rounded transition  group-hover:-translate-y-1 group-hover:shadow-xl"
+              />
+            </div>
+
+            <div class="mt-4 text-center">
+              <h2 class="text-lg text-gray-800"> {item.name}</h2>
+              <h3 class="text-sm text-slate-500"> {item.title}</h3>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</Layout>

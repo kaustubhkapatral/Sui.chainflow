@@ -1,0 +1,77 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+const videos = [
+  {
+    title: "How to Stake Solana Using the Phantom Wallet",
+    url: "https://player.vimeo.com/video/821798063?h=6bd53d7523",
+    desc: "This video is for educational purposes only. You stake at your own risk. If you wish to stake with Chainflow, please visit our website to review our terms and services at <a href='https://solana.chainflow.io/chainflow-solana-validator-terms-of-service'></a>. By the act of delegating your stake to us, you agree to our terms and services",
+  },
+  {
+    title: "How to Stake Solana Using a Keystone Hardware Wallet and Solflare",
+    url: "https://player.vimeo.com/video/845302305",
+    desc: "",
+  }
+];
+---
+
+<Layout title="Stake">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Staking on Sui</Fragment>
+      <Fragment slot="desc">
+        <p class="mt-10 mx-auto max-w-xl text-gray-700 text-center">
+        Secure and decentralize Solana by staking your SOL with Chainflow, a high performing, secure, independent and actively engaged non-Custodial validator.
+        <br>
+        <br>
+        Our Solana Validator Identity 2mMGsb5uy1Q4Dvezr8HK2E8SJoChcb2X7b61tJPaVHHd
+        </p>
+      </Fragment>
+    </Sectionhead>
+
+    <div>
+      <p class="mt-10 mx-auto max-w-xl text-gray-700 text-center">
+        Solana makes it straightforward for anyone with SOL to help secure and
+        decentralize the network through staking. Check out the videos below to
+        learn more about staking, and how to use popular tools to stake with
+        validators like Chainflow.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
+      {
+        videos.map((item, index) => (
+          <div class="sm:col-span-2 lg:col-auto lg:col-start-2" style="text-align: center">
+          {index === 1 ? 
+          <h2 style="margin-bottom: -82px" class="mt-3 text-xl font-semibold ">{item.title}</h2> : 
+          <h2 class="mt-3 text-xl font-semibold ">{item.title}</h2>
+          }
+            <div class="aspect-square overflow-hidden bg-gray-100">
+              <iframe
+                width="100%"
+                height="100%"
+                src={item.url}
+                title="Video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              />
+            </div>
+            {index === 1 ? 
+            <p style="margin-top:-50px" class="mt-2 text-gray-700"> These videos are for educational purposes only. You stake at your own risk. If you wish to stake with Chainflow, please visit our website to review our terms and services at <u><a href='/chainflow-solana-validator-terms-of-service'>https://solana.chainflow.io/chainflow-solana-validator-terms-of-service</a></u>. By the act of delegating your stake to us, you agree to our terms and services.</p>
+            :  ""}
+          </div>
+        ))
+      }
+    </div>
+    <div class="mt-10 mx-auto max-w-xl text-gray-700 text-center">
+      You can find other ways to delegate to us at <u><a href="https://www.validators.app/validators/2mMGsb5uy1Q4Dvezr8HK2E8SJoChcb2X7b61tJPaVHHd?locale=en&network=mainnet" target="_blank">validators.app</a></u> and <u><a href="https://stakewiz.com/validator/CAf8jfgqhia5VNrEF4A7Y9VLD3numMq9DVSceq7cPhNY" target="_blank">stakewiz.com</a></u>.
+    </div>
+    <div class="mt-5 mx-auto text-center text-gray-300">——</div>
+    <p class="mt-5 mx-auto max-w-xl text-gray-700 text-center">
+      Thousands of stakers trust Chainflow. If our values of inclusivity,
+      equitability, fairness, and decentralization resonate with you, please
+      consider staking with us to support our work across the Solana ecosystem.
+    </p>
+  </Container>
+</Layout>

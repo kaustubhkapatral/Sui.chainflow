@@ -1,0 +1,70 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    title: "Values",
+    description:
+      "We're here to build infrastructure for a decentralized future. Otherwise, what's the point?",
+    icon: "bx:bxs-heart",
+  },
+  {
+    title: "Equal and Inclusive",
+    description:
+      "To us, all delegators are the same. We don't cut backroom deals for larger stakeholders.",
+    icon: "bx:bxs-user",
+  },
+  {
+    title: "Experience",
+    description:
+      "Chainflow's been operating validators since 2017 and supporting Sui since 2023.",
+    icon: "bx:bxs-bookmarks",
+  },
+  {
+    title: "MEV",
+    description:
+      "We run the Jito MEV client and our validator is co-located with the Jito Tokyo servers.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "High Performing",
+    description:
+      "Our validator runs on a high performance server with an AMD Epyc 7543P processor, 516GB of RAM and 2x1.92TB NVME disks. It's connected via a 10GB uplink.",
+    icon: "bx:bxs-star",
+  },
+  {
+    title: "Contributing",
+    description:
+      "We've been active contributors since pre-mainnet and continue continue to be active contributors.",
+    icon: "bx:bx-check-double",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Non-custodial Sui staking for a brighter future.
+  </h2>
+  <p class="text-lg max-w-4xl mt-4 text-slate-600">
+    Chainflow operates non-custodial Sui staking infrastructure to support a
+    more inclusive, equitabile, fair, and decentralized future. Here's what sets
+    us apart from other validator operators:
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-orange-100 rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-orange-500" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

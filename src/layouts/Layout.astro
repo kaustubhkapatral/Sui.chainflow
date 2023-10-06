@@ -1,0 +1,64 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@components/footer.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import Cta from "@components/cta.astro";
+import "@fontsource/inter/variable.css";
+
+export interface Props {
+title: string;
+}
+// const { src } = await getImage({
+// src: "../../assets/hero.png",
+// width: 800,
+// height: 742,
+// format: "avif",
+// });
+// console.log(src);
+const resolvedImageWithDomain = new URL("/opengraph.jpg", Astro.url).toString();
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml"
+    href="https://chainflow.io/content/images/size/w256h256/2023/05/chainflow-1.png" />
+  <meta name="generator" content={ Astro.generator } />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@chainflow" />
+  <meta name="twitter:title" content="Chainflow" />
+  <meta name="twitter:description" content="Chainflow runs a secure, high performance Solana validator. We've actively supported Solana since pre-Mainnet Beta days and continue to be active contributors." />
+  <meta name="twitter:image" content="https://i.ibb.co/HgFBKzP/chainflow-1.jpg" />
+  <meta property="og:image" content="https://chainflow.io/content/images/size/w256h256/2023/05/chainflow-1.png">
+  <!-- < link rel = "preload" as="image" href = { src } alt = "Hero" /> -->
+  <SEO title={ `${title}${title && " | " }Chainflow` }
+    description="Chainflow runs a secure, high performance Solana validator. We've actively supported Solana since pre-Mainnet Beta days and continue to be active contributors."
+    twitter={{ creator: "@surjithctly" , site: "@web3templates" , card: "summary_large_image" , }} openGraph={{ basic: {
+    type: "website" , title: `Chainflow runs a secure, high performance Solana validator. We've actively supported
+    Solana since pre-Mainnet Beta days and continue to be active contributors`, image: resolvedImageWithDomain, },
+    image: { alt: "Homepage Screenshot" , }, }} />
+</head>
+
+<body>
+  <Navbar />
+  <slot />
+  <Cta />
+  <Footer />
+  <style is: global>
+    /* Improve Page speed */
+    /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+    img {
+      content-visibility: auto;
+    }
+  </style>
+</body>
+
+</html>
+
+
+
+

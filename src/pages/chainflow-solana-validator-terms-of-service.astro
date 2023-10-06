@@ -1,0 +1,20 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import * as Terms from "@content/pages/chainflow-solana-validator-terms-of-service.md";
+import Cta from "@components/cta.astro";
+---
+
+<Layout title="Solana Validator Terms of Service">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Solana Validator Terms of Service</Fragment>
+      <Fragment slot="desc">&nbsp;</Fragment>
+    </Sectionhead>
+
+    <div class="mx-auto prose prose-lg prose-a:text-orange-500 mt-10 max-w-3xl">
+      <Terms.Content />
+    </div>
+  </Container>
+</Layout>
