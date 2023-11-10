@@ -17,7 +17,7 @@ jobs:
       - name: Deploy Sui website
         uses: appleboy/ssh-action@master # call a custom script by user appleboy for SSH on github
         with: # all below inputs are specifically defined in ssh-action script
-          host: ${{secrets.SSH_HOST}} # IP address of the server
+          host: ${{secrets.HOST}} # IP address of the server
           key: ${{secrets.SSH_KEY}} #private key of the server
           username: ${{secrets.USERNAME}} # user of the server
           
