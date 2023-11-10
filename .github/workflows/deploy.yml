@@ -27,7 +27,7 @@ jobs:
             rm -rf node_modules
             git pull origin main
             npm install
-            npm build
+            npm run build
             sudo rm -rf /var/www/html/*
             cd dist
             sudo cp -r * /var/www/html/
